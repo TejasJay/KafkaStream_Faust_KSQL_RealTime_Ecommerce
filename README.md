@@ -2,17 +2,24 @@
 
 **Purpose:**
 This project is designed to process, analyze, and monitor order and payment events in real-time using Kafka, Faust, and KSQL. The system is aimed at processing order and payment streams, detecting large or failed payments, aggregating user revenue, and identifying frequent failed payment patterns. The goal is to implement an end-to-end solution for real-time data processing, transformation, and monitoring of events related to e-commerce orders and payments.
+***
+## Demo:
+
+<div>
+    <a href="https://www.loom.com/share/a0a8702622f144aa8dfc33c6a67e83e4">
+    </a>
+    <a href="https://www.loom.com/share/a0a8702622f144aa8dfc33c6a67e83e4">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/a0a8702622f144aa8dfc33c6a67e83e4-7cbfcc0dba51c3ab-full-play.gif">
+    </a>
+  </div>
 
 ***
 ## Architecture:
 The architecture of this project includes several components:
 
-
-
-
 ```mermaid
 graph TD;
-    A[Start] --> B[Run `automate.sh` Script];
+    A[Start] --> B[Run automate.sh Script];
     B --> C[Start Zookeeper Service];
     B --> D[Start Kafka Broker Service];
     B --> E[Create Kafka Topics];
@@ -22,34 +29,37 @@ graph TD;
     E --> I[aggregated_revenue];
     E --> J[large_orders];
     E --> K[frequent_failed_payments];
-    F --> L[Start Order Producer];
-    G --> M[Start Payment Producer];
-    H --> N[Start Faust Worker: Failed Payments];
-    I --> O[Start Faust Worker: Aggregated Revenue];
-    J --> P[Start Faust Worker: Large Orders];
-    K --> Q[Start Faust Worker: Frequent Failed Payments];
-    L --> R[Kafka Producer sends Orders];
-    M --> S[Kafka Producer sends Payments];
-    N --> T[Faust Consumer processes Failed Payments];
-    O --> U[Faust Consumer processes Aggregated Revenue];
-    P --> V[Faust Consumer processes Large Orders];
-    Q --> W[Faust Consumer processes Frequent Failed Payments];
-    R --> X[Kafka Topics: orders];
-    S --> Y[Kafka Topics: payments];
-    T --> Z[Failed Payment Events to Kafka];
-    U --> AA[Aggregated Revenue Events to Kafka];
-    V --> AB[Large Orders Events to Kafka];
-    W --> AC[Frequent Failed Payment Events to Kafka];
-    AA --> AD[End Processing];
-    AC --> AD;
-    AB --> AD;
-    Z --> AD;
+    E --> L[users]; 
+    F --> M[Start Order Producer];
+    G --> N[Start Payment Producer];
+    H --> O[Start Faust Worker: Failed Payments];
+    I --> P[Start Faust Worker: Aggregated Revenue];
+    J --> Q[Start Faust Worker: Large Orders];
+    K --> R[Start Faust Worker: Frequent Failed Payments];
+    L --> S[Start Faust Worker: Users]; 
+    M --> T[Kafka Producer sends Orders];
+    N --> U[Kafka Producer sends Payments];
+    O --> V[Faust Consumer processes Failed Payments];
+    P --> W[Faust Consumer processes Aggregated Revenue];
+    Q --> X[Faust Consumer processes Large Orders];
+    R --> Y[Faust Consumer processes Frequent Failed Payments];
+    S --> Z[Faust Consumer processes Users];  
+    T --> AA[Kafka Topics: orders];
+    U --> AB[Kafka Topics: payments];
+    V --> AC[Failed Payment Events to Kafka];
+    W --> AD[Aggregated Revenue Events to Kafka];
+    X --> AE[Large Orders Events to Kafka];
+    Y --> AF[User Events to Kafka];  
+    AC --> AG[End Processing];
+    AD --> AG;
+    AE --> AG;
+    AF --> AG;
 
     classDef start_end fill:#f9f,stroke:#333,stroke-width:2px;
-    class A,AD start_end;
+    class A,AG start_end;
     
     classDef process fill:#ccf,stroke:#333,stroke-width:2px;
-    class B,D,E,L,M,N,O,P,Q start_end;
+    class B,D,E,M,N,O,P,Q,R start_end;
 ```
 ***
 
