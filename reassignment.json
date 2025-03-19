@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "partitions": [
+    {
+      "topic": "orders",
+      "partition": 0,
+      "replicas": [0]
+    },
+    {
+      "topic": "orders",
+      "partition": 1,
+      "replicas": [0]
+    },
+    {
+      "topic": "orders",
+      "partition": 2,
+      "replicas": [0]
+    },
+    {
+      "topic": "payments",
+      "partition": 0,
+      "replicas": [0]
+    },
+    {
+      "topic": "payments",
+      "partition": 1,
+      "replicas": [0]
+    },
+    {
+      "topic": "payments",
+      "partition": 2,
+      "replicas": [0]
+    }
+  ]
+}
