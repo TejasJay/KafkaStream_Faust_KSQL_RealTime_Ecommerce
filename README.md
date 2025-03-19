@@ -3,17 +3,7 @@
 **Purpose:**
 This project is designed to process, analyze, and monitor order and payment events in real-time using Kafka, Faust, and KSQL. The system is aimed at processing order and payment streams, detecting large or failed payments, aggregating user revenue, and identifying frequent failed payment patterns. The goal is to implement an end-to-end solution for real-time data processing, transformation, and monitoring of events related to e-commerce orders and payments.
 ***
-## Demo:
 
-<div>
-    <a href="https://www.loom.com/share/a0a8702622f144aa8dfc33c6a67e83e4">
-    </a>
-    <a href="https://www.loom.com/share/a0a8702622f144aa8dfc33c6a67e83e4">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/a0a8702622f144aa8dfc33c6a67e83e4-7cbfcc0dba51c3ab-full-play.gif">
-    </a>
-  </div>
-
-***
 ## Architecture:
 The architecture of this project includes several components:
 
@@ -61,6 +51,19 @@ graph TD;
     classDef process fill:#ccf,stroke:#333,stroke-width:2px;
     class B,D,E,M,N,O,P,Q,R start_end;
 ```
+***
+
+
+## Demo:
+
+<div>
+    <a href="https://www.loom.com/share/a0a8702622f144aa8dfc33c6a67e83e4">
+    </a>
+    <a href="https://www.loom.com/share/a0a8702622f144aa8dfc33c6a67e83e4">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/a0a8702622f144aa8dfc33c6a67e83e4-7cbfcc0dba51c3ab-full-play.gif">
+    </a>
+  </div>
+
 ***
 
 ### Project Overview:
